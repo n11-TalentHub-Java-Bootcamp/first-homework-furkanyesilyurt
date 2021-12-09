@@ -27,8 +27,8 @@
         <!-- Annotated entity classes -->
         <mapping class="entity.Category"/>
         <mapping class="entity.Product"/>
-        <!--        <mapping class="entity.ProductReview"/>-->
-        <!--        <mapping class="entity.User"/>-->
+        <mapping class="entity.ProductReview"/>
+        <mapping class="entity.User"/>
 
     </session-factory>
 </hibernate-configuration>

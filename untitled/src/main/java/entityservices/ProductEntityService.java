@@ -4,6 +4,7 @@ import dao.ProductDao;
 import dao.ProductDao;
 import dto.ProductDetailDto;
 import entity.Product;
+import entity.ProductReview;
 //import entity.UrunYorum;
 
 import java.math.BigDecimal;
@@ -41,8 +42,8 @@ public class ProductEntityService {
         return productDao.findAllUrunDetayDtoByKategoriKirilim(kirilim);
     }
 
-//    public List<UrunYorum> findAllReview(Long aid){
-//        return productDao.findAllReview(aid);
-//    }
+    public ProductReview findAllReview(Long id){
+        return productDao.findAllReview(id);
+    }
 
 }
