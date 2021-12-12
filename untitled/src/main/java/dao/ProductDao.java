@@ -2,6 +2,7 @@ package dao;
 
 import base.BaseDao;
 import dto.ProductDetailDto;
+import dto.ProductReviewAllDto;
 import dto.ProductReviewDto;
 import entity.Product;
 import entity.ProductReview;
@@ -91,21 +92,37 @@ public class ProductDao extends BaseDao {
         return query.list();
     }
 
-    public ProductReview findAllReview(Long id) {
+    public ProductReview findAllReview(Long ida) {
 //        String sql = "select urunyorum from ProductReview urunyorum where urunyorum.id = :id"  ;
-
-        String sql = "select " +
-                "new dto.ProductReviewDto( urunyorum.id, urunyorum.yorum ) " +
-                "from ProductReview urunyorum " +
-                "left join Product urun on urun.id = urunyorum.urunId " +
-                "where urunyorum.id = :givenid"  ;
-
 //        String sql = "select urunyorum from ProductReview urunyorum where urunyorum.id = :givenId"  ;
 
+        String sql = "select urun " +
+                //"new dto.ProductReviewDto(urun.adi, urunyorum.yorum) " +
+                "from Product urun " +
+                "left join ProductReview urunyorum on urun.id = urunyorum.urunId " +
+                "where urun.id = :givenId" ;
+
+
         Query query = getCurrentSession().createQuery(sql);
-        query.setParameter("givenId",id);
+        query.setParameter("givenId",ida);
 
         return (ProductReview) query.uniqueResult();
     }
+
+    public List<ProductReviewAllDto> findAllProductsWithReview(){
+
+        String sql = "select urun " +
+                //"new dto.ProductReviewDto(urun.adi, urunyorum.yorum) " +
+                "from ProductReview urunyorum " +
+                "left join Product urun on urun.id = urunyorum.urunId " ;
+
+        Query query = getCurrentSession().createQuery(sql);
+
+        return query.list();
+
+    }
+
+
+
 
 }

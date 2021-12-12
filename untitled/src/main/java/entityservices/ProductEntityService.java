@@ -3,6 +3,7 @@ package entityservices;
 import dao.ProductDao;
 import dao.ProductDao;
 import dto.ProductDetailDto;
+import dto.ProductReviewAllDto;
 import entity.Product;
 import entity.ProductReview;
 //import entity.UrunYorum;
@@ -44,6 +45,10 @@ public class ProductEntityService {
 
     public ProductReview findAllReview(Long id){
         return productDao.findAllReview(id);
+    }
+
+    public List<ProductReviewAllDto> findAllProductsWithReview(){
+        return productDao.findAllProductsWithReview();
     }
 
 }
