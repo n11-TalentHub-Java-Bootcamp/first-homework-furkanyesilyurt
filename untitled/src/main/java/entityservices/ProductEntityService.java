@@ -5,6 +5,7 @@ import dao.ProductDao;
 import dto.ProductDetailDto;
 import dto.ProductReviewAllDto;
 import dto.ProductReviewDto;
+import dto.UserReviewsDto;
 import entity.Product;
 import entity.ProductReview;
 //import entity.UrunYorum;
@@ -50,6 +51,10 @@ public class ProductEntityService {
 
     public List<ProductReviewAllDto> findAllProductsWithReview(){
         return productDao.findAllProductsWithReview();
+    }
+
+    public List<UserReviewsDto> findUsersReview(){
+        return productDao.findUsersReview();
     }
 
 }

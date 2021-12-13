@@ -4,6 +4,7 @@ import base.BaseDao;
 import dto.ProductDetailDto;
 import dto.ProductReviewAllDto;
 import dto.ProductReviewDto;
+import dto.UserReviewsDto;
 import entity.Product;
 import entity.ProductReview;
 import org.hibernate.query.Query;
@@ -126,4 +127,17 @@ public class ProductDao extends BaseDao {
         return query.list();
     }
 
+    public List<UserReviewsDto> findUsersReview(){
+
+        String sql = "select new " +
+                UserReviewsDto.class.getName() +
+                "(user.id, user.adi, product.adi, productReview.yorum, productReview.yorumTarihi) " +
+                "from User user, Product product " +
+                "left join ProductReview productReview on user.id = productReview.kullaniciId " +
+                "order by user.id " ;
+
+        Query query = getCurrentSession().createQuery(sql);
+
+        return query.list();
+    }
 }
