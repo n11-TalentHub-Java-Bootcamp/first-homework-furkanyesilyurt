@@ -81,7 +81,7 @@ public class ProductDao extends BaseDao {
     public List<ProductDetailDto> findAllUrunDetayDtoByKategoriKirilim(Long kirilim) {
 
         String sql = " select " +
-                " new dto.UrunDetayDto( urun.adi, kategori.adi, urun.fiyat ) " +
+                " new dto.ProductDetailDto( urun.adi, kategori.adi, urun.fiyat ) " +
                 " from Product urun " +
                 " left join Category kategori  on urun.kategori.id = kategori.id " +
                 " where kategori.kirilim = :kirilim ";
