@@ -48,8 +48,8 @@ public class ProductEntityService {
         return productDao.findAllReview(id);
     }
 
-//    public List<ProductReviewAllDto> findAllProductsWithReview(){
-//        return productDao.findAllProductsWithReview();
-//    }
+    public List<ProductReviewAllDto> findAllProductsWithReview(){
+        return productDao.findAllProductsWithReview();
+    }
 
 }

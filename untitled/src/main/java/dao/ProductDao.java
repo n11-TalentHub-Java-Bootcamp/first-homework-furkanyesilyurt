@@ -112,20 +112,18 @@ public class ProductDao extends BaseDao {
         return query.list();
     }
 
-//    public List<ProductReviewAllDto> findAllProductsWithReview(){
-//
-//        String sql = "select urun " +
-//                //"new dto.ProductReviewDto(urun.adi, urunyorum.yorum) " +
-//                "from ProductReview urunyorum " +
-//                "left join Product urun on urun.id = urunyorum.urunId " ;
-//
-//        Query query = getCurrentSession().createQuery(sql);
-//
-//        return query.list();
-//
-//    }
+    public List<ProductReviewAllDto> findAllProductsWithReview(){
 
+        String sql = "select new " +
+                ProductReviewAllDto.class.getName() +
+                "(product.id, product.adi, product.fiyat, count(productReview.id)) " +
+                "from Product product " +
+                "left join ProductReview productReview on product.id = productReview.urunId " +
+                "group by product.id " ;
 
+        Query query = getCurrentSession().createQuery(sql);
 
+        return query.list();
+    }
 
 }

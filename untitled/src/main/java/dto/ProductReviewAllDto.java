@@ -7,12 +7,12 @@ public class ProductReviewAllDto {
     private Long urunId;
     private String urunAdi;
     private BigDecimal urunFiyati;
-    private int yorumSayisi;
+    private Long yorumSayisi;
 
     public ProductReviewAllDto() {
     }
 
-    public ProductReviewAllDto(Long urunId, String urunAdi, BigDecimal urunFiyati, int yorumSayisi) {
+    public ProductReviewAllDto(Long urunId, String urunAdi, BigDecimal urunFiyati, Long yorumSayisi) {
         this.urunId = urunId;
         this.urunAdi = urunAdi;
         this.urunFiyati = urunFiyati;
@@ -43,16 +43,21 @@ public class ProductReviewAllDto {
         this.urunFiyati = urunFiyati;
     }
 
-    public int getYorumSayisi() {
+    public Long getYorumSayisi() {
         return yorumSayisi;
     }
 
-    public void setYorumSayisi(int yorumSayisi) {
+    public void setYorumSayisi(Long yorumSayisi) {
         this.yorumSayisi = yorumSayisi;
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "ProductReviewAllDto{" +
+                "urunId='" + urunId + '\'' +
+                ", urunAdi='" + urunAdi + '\'' +
+                ", urunFiyati=" + urunFiyati + '\'' +
+                ", yorumSayisi=" + yorumSayisi +
+                '}';
     }
 }
