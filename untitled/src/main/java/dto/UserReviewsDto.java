@@ -3,11 +3,15 @@ package dto;
 import java.util.Date;
 
 public class UserReviewsDto {
+    //Kullanıcıların yaptığı yorumları gösteren dto classı.
     private Long userId;
     private String userName;
     private String productName;
     private String comment;
     private Date commentDate;
+
+    public UserReviewsDto() {
+    }
 
     public UserReviewsDto(Long userId, String userName, String productName, String comment, Date commentDate) {
         this.userId = userId;

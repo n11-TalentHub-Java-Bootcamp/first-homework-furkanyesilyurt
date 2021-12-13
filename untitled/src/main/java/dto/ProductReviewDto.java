@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class ProductReviewDto {
+//tüm ürenlere ait yorumları gösteren dto classı.
 
     private String urunAdi;
     private String kategoriAdi;

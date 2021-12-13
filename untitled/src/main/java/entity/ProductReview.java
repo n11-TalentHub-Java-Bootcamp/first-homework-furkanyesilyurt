@@ -9,6 +9,10 @@ yorum tarihi
 urun id
 kullanici id
  */
+
+/**
+ * Ürünyorum tablosuna ait entity. Ödev-1
+ */
 @Entity
 @Table(name = "urunyorum")
 public class ProductReview {

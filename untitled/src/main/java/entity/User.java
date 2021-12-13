@@ -2,6 +2,18 @@ package entity;
 
 import javax.persistence.*;
 
+/**
+ * Kullanıcı tablosuna ait entity. Ödev-1
+ */
+
+/**
+ * id
+ * adi
+ * soyadi
+ * email
+ * telefon
+ */
+
 @Entity
 @Table(name = "kullanici")
 public class User {

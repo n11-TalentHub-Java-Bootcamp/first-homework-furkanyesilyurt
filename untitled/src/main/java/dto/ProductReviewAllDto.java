@@ -3,7 +3,7 @@ package dto;
 import java.math.BigDecimal;
 
 public class ProductReviewAllDto {
-
+//ürüne ait yorumları gösteren dto classı.
     private Long urunId;
     private String urunAdi;
     private BigDecimal urunFiyati;
