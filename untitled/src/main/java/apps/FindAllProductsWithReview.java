@@ -11,12 +11,12 @@ public class FindAllProductsWithReview {
 
     public static void main(String[] args) {
 
-        ProductEntityService service = new ProductEntityService();
-        List<ProductReviewAllDto> productList = service.findAllProductsWithReview();
-
-        for (ProductReviewAllDto product : productList) {
-            System.out.println(product);
-        }
+//        ProductEntityService service = new ProductEntityService();
+//        List<ProductReviewAllDto> productList = service.findAllProductsWithReview();
+//
+//        for (ProductReviewAllDto product : productList) {
+//            System.out.println(product);
+//        }
     }
 
 }

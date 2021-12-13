@@ -1,5 +1,7 @@
 package apps;
 
+import dto.ProductDetailDto;
+import dto.ProductReviewDto;
 import entity.ProductReview;
 import entityservices.ProductEntityService;
 
@@ -9,12 +11,12 @@ public class FindProductWithReviews {
 
     public static void main(String[] args) {
 
-//        long aid = 1;
-
         ProductEntityService service = new ProductEntityService();
-        ProductReview productReview = service.findAllReview(1L);
+        List<ProductReviewDto> productReviewList = service.findAllReview(1L);
 
-        System.out.println(productReview);
+        for (ProductReviewDto productReviewDto : productReviewList) {
+            System.out.println(productReviewDto);
+        }
     }
 
 }

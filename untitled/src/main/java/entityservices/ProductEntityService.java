@@ -4,6 +4,7 @@ import dao.ProductDao;
 import dao.ProductDao;
 import dto.ProductDetailDto;
 import dto.ProductReviewAllDto;
+import dto.ProductReviewDto;
 import entity.Product;
 import entity.ProductReview;
 //import entity.UrunYorum;
@@ -43,12 +44,12 @@ public class ProductEntityService {
         return productDao.findAllUrunDetayDtoByKategoriKirilim(kirilim);
     }
 
-    public ProductReview findAllReview(Long id){
+    public List<ProductReviewDto> findAllReview(Long id){
         return productDao.findAllReview(id);
     }
 
-    public List<ProductReviewAllDto> findAllProductsWithReview(){
-        return productDao.findAllProductsWithReview();
-    }
+//    public List<ProductReviewAllDto> findAllProductsWithReview(){
+//        return productDao.findAllProductsWithReview();
+//    }
 
 }
